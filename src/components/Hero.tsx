@@ -19,7 +19,7 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Title with Animation */}
           <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-text-reveal">
-            <span className="text-gradient">Alex Johnson</span>
+            <span className="text-gradient">Tony Wang</span>
           </h1>
           
           {/* Typing Effect Subtitle */}

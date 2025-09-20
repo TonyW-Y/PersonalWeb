@@ -6,11 +6,11 @@ import { ExternalLink, Github } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A modern, full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      liveUrl: "https://example-ecommerce.com",
-      githubUrl: "https://github.com/alexjohnson/ecommerce-platform",
+      title: "AIFlix Movie Website",
+      description: "A feature-rich movie platform that integrates with the TMDb API to display a vast collection of films. Built with a Node.js and MongoDB backend for secure user authentication and data management. Features include advanced search, filtering options, and AI-powered movie recommendations to enhance user experience.",
+      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "React", "MongoDB", "Render"],
+      liveUrl: "https://aiflix1.onrender.com/",
+      githubUrl: "https://github.com/TonyW-Y/AIFlix",
       featured: true
     },
     {
