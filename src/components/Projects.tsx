@@ -4,14 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { HackingAnimation } from "./HackingAnimation";
+import { HackingSuccessAnimation } from "./HackingSuccessAnimation";
 
 export const Projects = () => {
   const [showHackingAnimation, setShowHackingAnimation] = useState(false);
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [currentProject, setCurrentProject] = useState<{title: string; githubUrl: string} | null>(null);
 
   const handleCodeClick = (project: { title: string; githubUrl: string }) => {
     if (project.title === 'Chess Engine') {
-      window.open(project.githubUrl, '_blank');
+      setCurrentProject(project);
+      setShowSuccessAnimation(true);
     } else {
       setCurrentProject(project);
       setShowHackingAnimation(true);
@@ -20,6 +23,11 @@ export const Projects = () => {
 
   const handleHackingComplete = () => {
     setShowHackingAnimation(false);
+    setCurrentProject(null);
+  };
+
+  const handleSuccessComplete = () => {
+    setShowSuccessAnimation(false);
     setCurrentProject(null);
   };
   const projects = [
@@ -216,6 +224,13 @@ export const Projects = () => {
         <HackingAnimation 
           isVisible={showHackingAnimation}
           onComplete={handleHackingComplete}
+        />
+      )}
+      {showSuccessAnimation && currentProject && (
+        <HackingSuccessAnimation 
+          isVisible={showSuccessAnimation}
+          onComplete={handleSuccessComplete}
+          projectUrl={currentProject.githubUrl}
         />
       )}
     </section>
