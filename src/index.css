@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Dark Futuristic Theme
+All colors MUST be HSL. Semantic tokens for consistent theming.
+*/
+
+@layer base {
+  :root {
+    /* Dark Theme Base Colors */
+    --background: 222 15% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 15% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 15% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary Purple/Blue Accent */
+    --primary: 243 75% 66%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 243 75% 76%;
+
+    /* Secondary Greys */
+    --secondary: 222 15% 12%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 15% 10%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 75% 66%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 15% 15%;
+    --input: 222 15% 12%;
+    --ring: 243 75% 66%;
+
+    --radius: 0.75rem;
+
+    /* Custom Portfolio Colors */
+    --hero-gradient-start: 243 75% 66%;
+    --hero-gradient-end: 262 75% 66%;
+    --glass-bg: 222 15% 8%;
+    --glass-border: 222 15% 20%;
+    --glow-primary: 243 75% 66%;
+    --glow-secondary: 262 75% 66%;
+    
+    /* Typography */
+    --text-hero: 210 40% 98%;
+    --text-subtitle: 215 20% 75%;
+    --text-body: 215 20% 85%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass-bg) / 0.8), hsl(var(--glass-bg) / 0.4));
+    --gradient-border: linear-gradient(135deg, hsl(var(--glass-border)), hsl(var(--glass-border) / 0.5));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--glow-primary) / 0.3);
+    --shadow-card: 0 20px 40px hsl(222 15% 3% / 0.5);
+    --shadow-intense: 0 0 60px hsl(var(--glow-primary) / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* We're using dark theme as default, so no separate dark class needed */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(circle at 20% 80%, hsl(var(--glow-primary) / 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsl(var(--glow-secondary) / 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Animation Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3);
+  }
+  50% { 
+    box-shadow: var(--shadow-intense);
+  }
+}
+
+@keyframes text-reveal {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px) rotateX(90deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: hsl(var(--primary)); }
+}
+
+/* Custom Component Classes */
+@layer components {
+  .glass-card {
+    @apply relative backdrop-blur-sm border;
+    background: var(--gradient-glass);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glow-effect {
+    @apply relative;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 -z-10 rounded-lg blur-xl opacity-70;
+    background: var(--gradient-primary);
+    animation: glow-pulse 3s ease-in-out infinite alternate;
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-intense);
+  }
+  
+  .typing-effect {
+    @apply inline-block overflow-hidden whitespace-nowrap;
+    border-right: 3px solid hsl(var(--primary));
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
