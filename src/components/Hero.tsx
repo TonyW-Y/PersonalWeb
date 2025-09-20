@@ -22,21 +22,28 @@ export const Hero = () => {
             <span className="text-gradient">Tony Wang</span>
           </h1>
           
-          {/* Typing Effect Subtitle */}
+          {/* Subtitle */}
           <div className="h-16 mb-8 flex items-center justify-center">
             <p className="text-2xl md:text-3xl text-muted-foreground typing-effect">
-              Full-Stack Developer
+              Software Engineering Student · Full-Stack Developer
             </p>
           </div>
           
           {/* Description */}
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-in-left" style={{animationDelay: '1s'}}>
-            I craft digital experiences that blend innovation with functionality. 
-            Passionate about creating scalable solutions and bringing ideas to life through code.
+          <p 
+            className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-in-left" 
+            style={{animationDelay: '1s'}}
+          >
+            I build interactive, scalable applications that connect clean design with performance. 
+            From AI-powered feedback tools to map-based study apps, my projects merge creativity, 
+            problem-solving, and real-world impact.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-right" style={{animationDelay: '1.5s'}}>
+          <div 
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-right" 
+            style={{animationDelay: '1.5s'}}
+          >
             <Button 
               size="lg" 
               className="glow-effect hover-lift px-8 py-4 text-lg font-semibold"
@@ -44,13 +51,18 @@ export const Hero = () => {
             >
               View My Work
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 text-lg font-semibold border-primary/30 text-primary hover:bg-primary/10"
+            <a 
+              href="/Tony-Wang-Resume.pdf" // 🔗 replace with actual resume file path
+              download 
             >
-              Download Resume
-            </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="px-8 py-4 text-lg font-semibold border-primary/30 text-primary hover:bg-primary/10"
+              >
+                Download Resume
+              </Button>
+            </a>
           </div>
         </div>
       </div>

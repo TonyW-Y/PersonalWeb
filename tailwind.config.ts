@@ -5,6 +5,27 @@ export default {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    keyframes: {
+      shake: {
+        '0%, 100%': { transform: 'translateX(0)' },
+        '25%': { transform: 'translateX(-3px)' },
+        '75%': { transform: 'translateX(3px)' },
+      },
+      'jump-in': {
+        '0%': { 
+          opacity: '0',
+          transform: 'scale(0.8) translateY(20px)' 
+        },
+        '100%': { 
+          opacity: '1',
+          transform: 'scale(1) translateY(0)' 
+        },
+      },
+    },
+    animation: {
+      'shake': 'shake 0.3s ease-in-out',
+      'jump-in': 'jump-in 0.3s ease-out forwards',
+    },
     container: {
       center: true,
       padding: "2rem",

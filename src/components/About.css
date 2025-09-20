@@ -1,0 +1,33 @@
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateX(var(--rotateX, 0)) rotateY(var(--rotateY, 0));
+  }
+  50% {
+    transform: translateY(-10px) rotateX(calc(var(--rotateX, 0) * 0.8)) rotateY(calc(var(--rotateY, 0) * 0.8));
+  }
+}
+
+@keyframes borderShine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.group:hover {
+  transform: 
+    translateY(calc(-1 * var(--glow-translate, 0px)))
+    rotateX(var(--rotateX, 0))
+    rotateY(var(--rotateY, 0))
+    translateZ(10px);
+  box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.2);
+}
