@@ -52,7 +52,7 @@ export const Hero = () => {
               View My Work
             </Button>
             <a 
-              href="/Tony-Wang-Resume.pdf" // 🔗 replace with actual resume file path
+              href="/TonyWangResume.pdf" // 🔗 replace with actual resume file path
               download 
             >
               <Button 
