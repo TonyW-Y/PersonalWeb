@@ -36,15 +36,15 @@ export const Projects = () => {
       description: "A feature-rich movie platform that integrates with the TMDb API to display a vast collection of films. Built with a Node.js and MongoDB backend for secure user authentication and data management. Features include advanced search, filtering options, and AI-powered movie recommendations to enhance user experience.",
       technologies: ["HTML", "CSS", "JavaScript", "Node.js", "React", "MongoDB", "Render"],
       liveUrl: "https://aiflix1.onrender.com/",
-      githubUrl: "https://github.com/TonyW-Y/AIFlix",
+      githubUrl: "https://github.com/TonyW-Y/MovieSite",
       featured: true
     },
     {
       title: "StudyFinder",
       description: "A full-stack web app to discover and review study-friendly locations such as cafes, libraries, and coworking spaces. Integrated Mapbox and OpenStreetMap for location discovery, with Supabase providing authentication and real-time database storage for user reviews.",
       technologies: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Mapbox"],
-      liveUrl: "https://github.com/coffeefuelbump/studyfinder", // 🔗 replace with deployed URL if available
-      githubUrl: "https://github.com/coffeefuelbump/studyfinder",
+      liveUrl: "study-spot-two.vercel.app", // 🔗 replace with deployed URL if available
+      githubUrl: "https://github.com/TonyW-Y/StudyFinder",
       featured: true
     },
     {
@@ -52,15 +52,15 @@ export const Projects = () => {
       description: "A real-time speech analysis platform that helps users practice and improve presentations. Uses AssemblyAI to analyze audio, track filler words, and detect pacing issues. Built with Firebase for authentication and storage, plus interactive frontend visualizations in React.",
       technologies: ["React", "Node.js", "Firebase", "AssemblyAI"],
       liveUrl: "https://verbai-f0cba.web.app/", // 🔗 replace with deployed link if any
-      githubUrl: "https://github.com/coffeefuelbump/verbai",
+      githubUrl: "https://github.com/TonyW-Y/VerbAI",
       featured: false
     },
     {
       title: "Chess Engine",
       description: "A fully functional chess engine built with Python using OOP and algorithmic principles. Implements move generation, legality checking, check detection, undo/redo functionality, and turn management. Includes unit tests with Pytest for core modules to ensure correctness.",
       technologies: ["Python", "NumPy", "Pytest"],
-      liveUrl: "https://github.com/coffeefuelbump/chess-engine", // 🔗 replace with demo if you deploy visualization
-      githubUrl: "https://github.com/coffeefuelbump/chess-engine",
+      liveUrl: "https://chess-frontend-fz6z.onrender.com/", // 🔗 replace with demo if you deploy visualization
+      githubUrl: "https://github.com/TonyW-Y/Chess",
       featured: false
     }
   ];
