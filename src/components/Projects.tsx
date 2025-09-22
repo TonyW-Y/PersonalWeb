@@ -43,7 +43,7 @@ export const Projects = () => {
       title: "StudyFinder",
       description: "A full-stack web app to discover and review study-friendly locations such as cafes, libraries, and coworking spaces. Integrated Mapbox and OpenStreetMap for location discovery, with Supabase providing authentication and real-time database storage for user reviews.",
       technologies: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Mapbox"],
-      liveUrl: "study-spot-two.vercel.app", // 🔗 replace with deployed URL if available
+      liveUrl: "https://study-spot-two.vercel.app", // 🔗 replace with deployed URL if available
       githubUrl: "https://github.com/TonyW-Y/StudyFinder",
       featured: true
     },
